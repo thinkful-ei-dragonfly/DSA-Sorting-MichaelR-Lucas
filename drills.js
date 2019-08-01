@@ -166,3 +166,67 @@ for (let i = 0; i< pivotArray.length; i++) {
 console.log('MERGE SORT');
 // console.log(sll);
 // console.log(sll.mergeSort());
+
+
+
+
+
+
+
+// #6 Bucket SORT
+
+
+// This is an example argument array: [10, 5, 2, 50, 15, 7, 3, 23, 30]
+
+function bucketAlgorithm(array) {
+  // Considering we know the highest and lowest values,
+  let lowest = something
+  let highest = something
+  // we'll find the indexOf those items
+
+  let lowestIndex = array.indexOf(lowest) // 2
+  let highestIndex = array.indexOf(highest) // 3
+  swap(array, array[0], array[lowestIndex])
+  swap(array, array[array.length - 1], array[highestIndex])
+  // and swap them, resulting in:
+  // [2, 5, 10, 30, 15, 7, 3, 23, 50]
+
+  // start the left just after the lowest item
+  let left = 1
+  // right will be the item just before the highest
+  let right = array.length - 2
+
+  while (left < right) {
+    // left stays still while right decreases
+
+    if (array[left] > array[right]) {
+      swap(array, array[left], array[right])
+      // move left once to the right, compare those values
+      left++
+    }
+
+
+  }
+
+  // expected output is [2, 3, 5, 7, 10, 15, 23, 30, 50]
+
+}
+
+
+
+// #7
+function randomArray(arr) {
+  let i = 0
+
+
+  while (i < arr.length) {
+      let randomIndex = Math.floor(Math.random() * Math.floor(arr.length))
+      console.log(randomIndex);
+      swap(arr, arr[i], arr[randomIndex])
+      i++
+  }
+
+  return arr
+}
+
+console.log(randomArray([1,2,3,4,5]))
